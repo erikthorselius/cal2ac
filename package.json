@@ -1,0 +1,10 @@
+{
+  "name": "cal2ac",
+  "description": "google calendar to electric power",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "3.x"
+  }
+}
+
