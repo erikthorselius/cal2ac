@@ -29,7 +29,7 @@ function shiftTime(startEndTime) {
     date.setHours(date.getHours()-1);
     shiftedTime[key] = date;
   });
-  return shiftedTime 
+  return shiftedTime;
 }
 
 function collectFeed(callback) {
