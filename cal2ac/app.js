@@ -5,7 +5,6 @@
 
 var express = require('express')
   , routes = require('./routes')
-  , user = require('./routes/user')
   , calendar = require('./routes/calendar')
   , http = require('http')
   , path = require('path');
@@ -29,8 +28,6 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-app.get('/', routes.index);
-app.get('/users', user.list);
 app.get('/calendar', calendar.show);
 
 http.createServer(app).listen(app.get('port'), function(){
