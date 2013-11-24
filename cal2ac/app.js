@@ -4,7 +4,6 @@
  */
 
 var express = require('express')
-  , routes = require('./routes')
   , calendar = require('./routes/calendar')
   , http = require('http')
   , path = require('path');
@@ -28,7 +27,7 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-app.get('/calendar', calendar.show);
+app.get('/', calendar.show);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
