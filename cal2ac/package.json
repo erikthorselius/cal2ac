@@ -10,6 +10,7 @@
     "jade": "*",
     "stylus": "*",
     "colors": "*",
-    "underscore": "~1.5.2"
+    "underscore": "~1.5.2",
+    "node-schedule": "~0.1.13"
   }
 }
