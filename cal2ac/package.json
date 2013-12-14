@@ -1,5 +1,6 @@
 {
-  "name": "application-name",
+  "name": "cal2ac",
+  "description": "google calendar to electric power",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -11,6 +12,7 @@
     "stylus": "*",
     "colors": "*",
     "underscore": "~1.5.2",
-    "node-schedule": "~0.1.13"
+    "node-schedule": "~0.1.13",
+    "sha1": "*"
   }
 }
