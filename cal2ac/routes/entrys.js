@@ -12,7 +12,8 @@ exports.get = function(callback){
 function buildArray(data) {
   calendar = JSON.parse(data);
   entrys = _.reduce(calendar.feed.entry, function(memo, entry){ memo.push(shiftTime(entry.gd$when.shift())); return memo;}, [])
-  return entrys;
+  filteredStartedEntrys = _.reduce(entrys, function(memo, entry){ if(hasEntryStarted(entry)) {memo.push(entry)};return memo;}, []);
+  return filteredStartedEntrys;
 }
 
 function shiftTime(startEndTime) {
@@ -23,6 +24,13 @@ function shiftTime(startEndTime) {
     shiftedTime[key] = date;
   });
   return shiftedTime;
+}
+
+function hasEntryStarted(entry) {
+  var now = new Date();
+  var startTime = new Date(entry.startTime);
+  if (startTime < now) { return false }
+  return true;
 }
 
 function collectFeed(callback) {
